@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Top 5 Movies{% endblock %}
+
+{% block content %}
+    {% include 'nav.html' %}
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Current Top Five Movies
+                </h1>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+    <!--making list for top five movies-->
+        <ol>
+            {% for info in imdb %}
+            <li><img src="{{info}}"></li>
+            {%endfor %}
+
+            {% for item in watchinglist %}
+            <li>{{item}}</li>
+            {% endfor%}
+            {% for item in ratings %}
+            <li>Ratings:{{item}}</li>
+            {% endfor%}
+        </ol>
+    </section>
+
+{%include 'footer.html' %}
+{% endblock %}

@@ -1,0 +1,15 @@
+ 
+before
+QuizId=Convert.Toint32(Char.getNumericValue(firstLine[5]);
+
+after 
+string[] number = Regex.Split(firstLine, @"\D+");
+            foreach(string value in number)
+            {
+                if(!string.IsNullOrEmpty(value))
+                {
+                    int i = int.Parse(value);
+                    //Console.WriteLine("number:{0}", i);
+                    QuizId = Convert.ToInt32(i);
+                }
+            }
